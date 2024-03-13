@@ -1,11 +1,18 @@
 import React from 'react';
+import { HomePage } from 'pages/home-page';
+import { CreateToDoPage } from 'pages/create-todo-page';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { DetailsToDoPage } from 'pages/details-todo-page';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Code Challenge!</h1>
-      {process.env.REACT_APP_BASE_URL}
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/create-todo" component={CreateToDoPage} />
+        <Route path="/details-todo/:id" component={DetailsToDoPage} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
