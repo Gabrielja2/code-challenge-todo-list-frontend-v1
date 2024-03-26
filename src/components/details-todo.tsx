@@ -1,31 +1,23 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import * as S from '../styles/styled';
 import { useHistory, useParams } from 'react-router-dom';
 import { ToDoCard } from './todo-card';
 import { getToDo } from 'services/get-todo-service';
+import { ToDoProps } from 'types/todo-type';
 
-export function DetailsTodoContent() {
+export function DetailsTodo() {
   const history = useHistory();
   const { id }: { id: string } = useParams();
-  const [toDo, setToDo] = React.useState<{
-    id: number;
-    title: string;
-    description: string;
-  }>({
+  const [toDo, setToDo] = React.useState<ToDoProps>({
     id: 0,
     title: '',
     description: '',
   });
 
-  const todoById = useCallback(async () => {
-    const response = await getToDo(Number(id));
-
-    setToDo(response);
+  React.useEffect(() => {
+    getToDo(Number(id)).then(setToDo);
   }, [id]);
 
-  React.useEffect(() => {
-    todoById();
-  }, [todoById]);
   async function handleClick() {
     history.push('/');
   }
@@ -33,8 +25,8 @@ export function DetailsTodoContent() {
   return (
     <S.ToDoContainer>
       <S.Title>Detalhes da Tarefa</S.Title>
-      <ToDoCard todo={toDo} />
-      <S.Button onClick={handleClick} defaultValue={'100px'} theme={'#df5e5e'}>
+      <ToDoCard {...toDo} />
+      <S.Button onClick={handleClick} defaultValue={'100px'} color={'#df5e5e'}>
         Voltar
       </S.Button>
     </S.ToDoContainer>

@@ -11,7 +11,7 @@ export function Header() {
   return (
     <S.Header>
       <S.Title>ToDo List</S.Title>
-      <S.Button defaultValue={'100px'} theme={'#5e8edf'} onClick={handleClick}>
+      <S.Button defaultValue={'100px'} color={'#5e8edf'} onClick={handleClick}>
         Add
       </S.Button>
     </S.Header>

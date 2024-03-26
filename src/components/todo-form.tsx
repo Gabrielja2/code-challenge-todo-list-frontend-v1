@@ -35,7 +35,7 @@ export function TodoForm() {
           Description
           <S.Input type="text" ref={descriptionRef} />
         </S.Label>
-        <S.Button defaultValue={'100%'} theme={'#5e8edf'} type="submit">
+        <S.Button defaultValue={'100%'} color={'#5e8edf'} type="submit">
           Create
         </S.Button>
       </S.CardContainer>

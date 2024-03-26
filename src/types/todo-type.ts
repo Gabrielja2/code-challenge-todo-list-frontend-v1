@@ -1,3 +1,10 @@
+export type CreateToDoProps = {
+  title: string;
+  description: string;
+};
+
 export type ToDoProps = {
-  todo: { id: number; title: string; description: string };
+  id: number;
+  title: string;
+  description: string;
 };

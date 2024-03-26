@@ -1,11 +1,11 @@
 import React from 'react';
-import { DetailsTodoContent } from 'components/details-todo-content';
+import { DetailsTodo } from 'components/details-todo';
 import * as S from 'styles/styled';
 
 export function DetailsToDoPage() {
   return (
     <S.Container>
-      <DetailsTodoContent />
+      <DetailsTodo />
     </S.Container>
   );
 }

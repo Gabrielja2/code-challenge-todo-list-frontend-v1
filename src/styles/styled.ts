@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const Button = styled.button`
-  background: ${({ theme }) => theme};
+export const Button = styled.button<{ color: string; defaultValue: string }>`
+  background: ${({ color }) => color};
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);

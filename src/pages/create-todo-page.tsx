@@ -1,7 +1,11 @@
 import React from 'react';
-import { CreateTodoContent } from 'components/create-todo-content';
+import { CreateTodo } from 'components/create-todo';
 import * as S from 'styles/styled';
 
 export function CreateToDoPage() {
-  return <S.Container>{<CreateTodoContent />}</S.Container>;
+  return (
+    <S.Container>
+      <CreateTodo />
+    </S.Container>
+  );
 }
