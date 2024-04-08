@@ -1,11 +1,13 @@
 import React from 'react';
+import Routers from 'routes/router';
+import { GlobalStyle } from '../styles/styled';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Code Challenge!</h1>
-      {process.env.REACT_APP_BASE_URL}
-    </div>
+    <>
+      <GlobalStyle />
+      <Routers />;
+    </>
   );
 }
 
